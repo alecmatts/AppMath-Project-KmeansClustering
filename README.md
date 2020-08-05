@@ -5,6 +5,10 @@
 * **Họ và tên:** Bùi Vũ Hiếu Phụng
 * **MSSV:** 18127185
 
+
+
+--------------------------------------------------------
+
 ## Mô tả
 
 ### Ý tưởng thực hiện
@@ -15,6 +19,8 @@
   * Xử lí hình ảnh: Đưa vào một bức ảnh, chuyển nó về ma trận phù hợp với tham số của hàm K-means
   * Chạy thuật toán K-means Clustering
   * Hiển thị kết quả: Chuyển output của hàm K-means thành ảnh và đưa ra màn hình notebook. Đồng thời lưu lại thành file
+  
+  
 
 #### K-means Clustering 
 
@@ -44,6 +50,8 @@
 * **Bước 4:** Lặp lại bước 2 và 3 cho tới khi thỏa điều kiện dừng
 
 **Điều kiện dừng:** Trong mã giả của hàm, tồn tại biến `max_iter`. Khi số lần chạy K-means bằng `max_iter `, ta đạt điều kiện dừng của hàm.
+
+
 
 ### Mô tả hàm
 
@@ -118,6 +126,8 @@
 * Mở ảnh và chuyển ảnh thành array: `pillow` a.k.a. `PIL` và `numpy`
 * Chuyển ảnh thành mảng 1 chiều: `np.reshape()`
 
+
+
 #### Hiển thị kết quả (không nằm trong hàm)
 
 * Với mỗi điểm ảnh, thay nó bằng centroid ứng với label của điểm ảnh đó
@@ -125,18 +135,37 @@
 * Hiển thị ảnh trực tiếp: ` matplotlib.pyplot.imshow()`
 * Xuất ra file: `PIL.Image.save()`
 
+
+
+----------------------------------------------------------------
+
 ## Kết quả minh họa
 
 * **Ảnh gốc**
 
-![rainbow](P:\Github\AppMath-Project-KmeansClustering\rainbow.jpg)
+![rainbow](rainbow.jpg)
+
+
 
 * Với $k = 3$, $\text{max_iter}=10$ và $\text{init_centroids}=\text{'random'}$
+
+![k3_i10](k3_i10.png)
 
 
 
 * Với $k=5$ và $\text{max_iter}=10$
+
+![K5_i10](k5_i10.png)
+
+
+
 * Với $k=7$ và $\text{max_iter}=10$
+
+![k7_i10](k7_i10.png)
+
+
+
+-------------------------------------------------
 
 ## Nhận xét
 
