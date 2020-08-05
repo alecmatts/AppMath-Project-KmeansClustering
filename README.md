@@ -32,7 +32,7 @@
 
 * **Bước 1:** Khởi tạo centroids (2 mode: `random` - ngẫu nhiên và `in_pixels` - chọn trong ảnh)
 
-  $\rightarrow$ Centroid là một vector cũng có dạng:
+  Centroid là một vector cũng có dạng:
 
   ![img](http://www.sciweavers.org/upload/Tex2Img_1596607470/eqn.png)
 
@@ -42,7 +42,7 @@
 
   * Label của điểm ảnh là index của centroid mà khoảng cách Euclide từ điểm ảnh đến centroid đó là gần nhất
 
-    $\rightarrow$ Khoảng cách đó là Euclidean distance giữa hai vector: 
+    Khoảng cách đó là Euclidean distance giữa hai vector: 
     
     ![img](http://www.sciweavers.org/upload/Tex2Img_1596607530/eqn.png)
 
@@ -58,8 +58,9 @@
     
     Thì centroid mới là: 
     
+
 ![img](http://www.sciweavers.org/upload/Tex2Img_1596607679/eqn.png)
-  
+
 * **Bước 4:** Lặp lại bước 2 và 3 cho tới khi thỏa điều kiện dừng
 
 **Điều kiện dừng:** Trong mã giả của hàm, tồn tại biến `max_iter`. Khi số lần chạy K-means bằng `max_iter `, ta đạt điều kiện dừng của hàm.
