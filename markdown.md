@@ -13,13 +13,7 @@
 
 ### Ý tưởng thực hiện
 
-* Mỗi điểm ảnh là một vector:
-
-  ![img](http://latex2png.com/pngs/6fc4cffe5f26fdf0f318fcf5cfadf227.png)
-
-   với ![img](http://www.sciweavers.org/upload/Tex2Img_1596607412/eqn.png) lần lượt tượng trưng cho kênh màu Red, Green, Blue (RGB)
-
-  
+* Mỗi điểm ảnh là một vector $\vec{v} =\begin{bmatrix} v_1 & v_2 & v_3 \end{bmatrix}$ với $v_1,\ v_2,\ v_3$ lần lượt tượng trưng cho kênh màu Red, Green, Blue (RGB)
 
 * Gồm các bước chính sau:
   * Xử lí hình ảnh: Đưa vào một bức ảnh, chuyển nó về ma trận phù hợp với tham số của hàm K-means
@@ -32,34 +26,27 @@
 
 * **Bước 1:** Khởi tạo centroids (2 mode: `random` - ngẫu nhiên và `in_pixels` - chọn trong ảnh)
 
-  $\rightarrow$ Centroid là một vector cũng có dạng:
-
-  ![img](http://www.sciweavers.org/upload/Tex2Img_1596607470/eqn.png)
-
-  
+  $\rightarrow$ Centroid là một vector cũng có dạng $\vec{u} =\begin{bmatrix} u_1 & u_2 & u_3 \end{bmatrix}$ 
 
 * **Bước 2:** Label cho các điểm ảnh
 
   * Label của điểm ảnh là index của centroid mà khoảng cách Euclide từ điểm ảnh đến centroid đó là gần nhất
-
-    $\rightarrow$ Khoảng cách đó là Euclidean distance giữa hai vector: 
-    
-    ![img](http://www.sciweavers.org/upload/Tex2Img_1596607530/eqn.png)
-
   
-
+    $\rightarrow$ Khoảng cách đó là Euclidean distance giữa hai vector: $d(\vec{v}, \vec{u})= \| \vec{v}-\vec{u}\|=\sqrt{(v_1-u_1)^2+(v_2-u_2)^2+(v_3-u_3)^2}$
+  
 * **Bước 3:** Cập nhật lại centroid
 
   * Centroid mới là trung bình của các điểm ảnh thuộc cluster của centroid cũ đó
 
   * Tại cluster `i`, ta có các điểm ảnh thuộc cluster đó là:
 
-    ![img](http://www.sciweavers.org/upload/Tex2Img_1596607654/eqn.png)
-    
-    Thì centroid mới là: 
-    
-![img](http://www.sciweavers.org/upload/Tex2Img_1596607679/eqn.png)
-  
+    $\vec{p_1} =\begin{bmatrix} p_{11} & p_{12} & p_{13} \end{bmatrix}\\
+    \vec{p_2} =\begin{bmatrix} p_{21} & p_{22} & p_{23} \end{bmatrix}\\
+    ...\\
+    \vec{p_n} =\begin{bmatrix} p_{n1} & p_{n2} & p_{n3} \end{bmatrix}\\$
+
+    Thì centroid mới là: $\vec{c} =\begin{bmatrix} \frac{p_{11}+p_{21}+...+p_{n1}}{n} & \frac{p_{12}+p_{22}+...+p_{n2}}{n} & \frac{p_{13}+p_{23}+...+p_{n3}}{n} \end{bmatrix}$
+
 * **Bước 4:** Lặp lại bước 2 và 3 cho tới khi thỏa điều kiện dừng
 
 **Điều kiện dừng:** Trong mã giả của hàm, tồn tại biến `max_iter`. Khi số lần chạy K-means bằng `max_iter `, ta đạt điều kiện dừng của hàm.
@@ -184,6 +171,3 @@
 
 * Với số cluster càng lớn hay số lượng màu lớn, hình ảnh càng được bảo toàn và rõ nét
 * Thời gian chạy tỉ lệ thuận với số cluster
-
-
-
