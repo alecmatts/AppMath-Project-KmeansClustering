@@ -139,25 +139,27 @@
 
 ----------------------------------------------------------------
 
+<div style="page-break-after: always; break-after: page;"></div>
+
 ## Kết quả minh họa
 
 * **Ảnh gốc**
 
 ![rainbow](rainbow.jpg)
 
-
+<div style="page-break-after: always; break-after: page;"></div>
 
 * **Với k = 3, max_iter = 10, init_centroids = 'random'**
 
 ![k3_i10](k3_i10.png)
 
-
+<div style="page-break-after: always; break-after: page;"></div>
 
 * **Với k = 5, max_iter = 10, init_centroids = 'random'**
 
 ![K5_i10](k5_i10.png)
 
-
+<div style="page-break-after: always; break-after: page;"></div>
 
 * **Với k = 7, max_iter = 10, init_centroids = 'random'**
 
