@@ -49,7 +49,10 @@
 
 * **Bước 4:** Lặp lại bước 2 và 3 cho tới khi thỏa điều kiện dừng
 
-**Điều kiện dừng:** Trong mã giả của hàm, tồn tại biến `max_iter`. Khi số lần chạy K-means bằng `max_iter `, ta đạt điều kiện dừng của hàm.
+**Điều kiện dừng:** 
+
+* Đã đạt số max_iter quy định
+* Các centroid đã hội tụ (không thay đổi)
 
 
 
@@ -149,21 +152,21 @@
 
 <div style="page-break-after: always; break-after: page;"></div>
 
-* **Với k = 3, max_iter = 10, init_centroids = 'random'**
+* **Với k = 3, init_centroids = 'random'**
 
-![k3_i10](k3_i10.png)
-
-<div style="page-break-after: always; break-after: page;"></div>
-
-* **Với k = 5, max_iter = 10, init_centroids = 'random'**
-
-![K5_i10](k5_i10.png)
+![k3_i10](rainbow_k3.png)
 
 <div style="page-break-after: always; break-after: page;"></div>
 
-* **Với k = 7, max_iter = 10, init_centroids = 'random'**
+* **Với k = 5, init_centroids = 'random'**
 
-![k7_i10](k7_i10.png)
+![K5_i10](rainbow_k5.png)
+
+<div style="page-break-after: always; break-after: page;"></div>
+
+* **Với k = 7, init_centroids = 'random'**
+
+![k7_i10](rainbow_k7.png)
 
 
 
@@ -172,4 +175,3 @@
 ## Nhận xét
 
 * Với số cluster càng lớn hay số lượng màu lớn, hình ảnh càng được bảo toàn và rõ nét
-* Thời gian chạy tỉ lệ thuận với số cluster
